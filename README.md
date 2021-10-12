@@ -1,13 +1,7 @@
 # papers-DeepLearning
-研究所閱讀論文
+紀錄一些研究所閱讀論文，關注的領域有
 
-# object detection 
-
-
-# semantic segmentation
-
-
-# instance segmentation
-
-
-
+- Action Recognition
+- Video Recognition/ Classification
+- Pose Estimation
+- Gesture Recognition
