@@ -2,8 +2,11 @@
 
 # 靜態圖片方法
 1、IDT
+
 2、2-stream
+
 3、IDT + 2-stream
+
 4、LSTM + 2-stream
 
 :::info
