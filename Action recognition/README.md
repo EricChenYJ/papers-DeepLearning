@@ -1,7 +1,14 @@
 # Introduction
 
 # 靜態圖片方法
+1、IDT
+2、2-stream
+3、IDT + 2-stream
+4、LSTM + 2-stream
 
+:::info
+從SIFT特徵轉CNN特徵
+:::
 # video stream方法
 1、Deep Temporal Linear Encoding Networks
 - two-stream ConvNets的補充與改進
