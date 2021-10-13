@@ -55,12 +55,19 @@ Attention
 
 # Training
 TrainSet: 753 classes to 23k videos
+
 input: `image sequence` of 224 pixels × 224 pixels × 3 channel × 40 frames
+
 Optimizer: `Ranger`
+
 Loss function: `Cross-entropy`
+
 Learning-Rate: `1e-5`
+
 Batch size: 4
+
 Epoch: 100
+
 ## type
 ![image](https://user-images.githubusercontent.com/48618187/137114155-f0856c6f-a38e-441c-9d09-ed0909b0b478.png)
 
