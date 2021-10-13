@@ -9,12 +9,12 @@
 
 # Annotation type
 
-0. bbox
-1. segment
-2. skeleton
+1. bbox
+2. segment
+3. skeleton
 
-- used for human posture evaluation, gesture recognition
-- computation cost is the most
+> - used for human posture evaluation, gesture recognition
+> - computation cost is the most
 
 # Dataset
 ## TSL
@@ -23,23 +23,24 @@
 
 2、`use HSV and flood fill select skin region then use mask rcnn  to get hands segmentation mask`
 ## Data augmentation
-[convert img size](https://github.com/jgm/pandoc/issues/2554)
+> [convert img size](https://github.com/jgm/pandoc/issues/2554)
 <img src="https://user-images.githubusercontent.com/48618187/137102958-e6e550e9-f6ca-4296-808a-b815cb4a1e8f.png" width="500">
 
 
 - produce in training phase
-### spatial domaain
+### Spatial domaain
 1、Resize to 224x224
 
 2、To simulate skin color
-- brightness to range [0.2, 2]
-- rotating signer +15/-15 degree randomly
+- brightness to range `[0.2, 2]`
+- rotating signer `+15/-15` degree randomly
 - shift randomly +-0.0105x and +-0.00622y and propotional scale to [0.6, 1.5] times.
 - randomly select background set
-- normalize data to mean:0.5, standard deviation:0.5
-### temporal domain
+- normalize data to `mean:0.5`, `standard deviation:0.5`
+### Temporal domain
 
 1、Stastisic the average frames first (about 50 frames)
+
 2、一旦我們決定的幀數超過40幀，我們就放棄其中的一部分，直到選擇到40幀； 如果它們小於 40，我們隨機重複一些幀，使選擇為 40。
 
 - random select : 隨機選擇40幀，並限制其第一幀和最後一幀的距離大於或等於{30, 35, 40, 45, 50}
@@ -49,14 +50,17 @@
 
 # Archcitecture
 <img src="https://user-images.githubusercontent.com/48618187/137105269-dc723085-731f-4f98-82ba-eb70760c374d.png" width="500">
+
 3D-ResNet
+
 SENet
+
 Attention
 
 # Training
 TrainSet: 753 classes to 23k videos
 
-input: `image sequence` of 224 pixels × 224 pixels × 3 channel × 40 frames
+Input: `image sequence` of 224 pixels × 224 pixels × 3 channel × 40 frames
 
 Optimizer: `Ranger`
 
@@ -68,7 +72,7 @@ Batch size: 4
 
 Epoch: 100
 
-## type
+## Type
 ![image](https://user-images.githubusercontent.com/48618187/137114155-f0856c6f-a38e-441c-9d09-ed0909b0b478.png)
 
 
@@ -76,7 +80,9 @@ Epoch: 100
 
 # Testing
 TestSet: 一樣的手語老師，種類較少的手語視訊
+
 Temporal: random select 40 frames
+
 Spatial: nomalization and resize to 224x224
 
 # Experiment
@@ -94,24 +100,28 @@ Spatial: nomalization and resize to 224x224
 
 ## Attention effect
 加入SENet 的 channel attention 機制
-不只可以提高 performance，也可以使模型收斂更快
+
+> 不只可以提高 performance，也可以使模型收斂更快
 
 <img src="https://user-images.githubusercontent.com/48618187/137118516-e52b57ac-60d3-4491-bc4a-4aa146858b53.png" width="700">
 
 下圖
+
 藍色是 attention-based 3D-ResNet50的訓練線
+
 粉色是 3D-ResNet50 沒有 attentionx
+
 X軸代表 iteration 次數
 <img src="https://user-images.githubusercontent.com/48618187/137124207-1ceccc55-3233-4ef3-9de8-9d36089ddc16.png" width="500">
                                                                                                                            
 # Conclusion
 1、 旨在對TSL進行詞彙分類，識別含意
                                                                                                                            
-針對TSL dataset 分辨率不足以及複雜的前處理問題，
+> 針對TSL dataset 分辨率不足以及複雜的前處理問題，
                                                                                                                            
 2、將注意力機制，從2D擴展到3D還可以提高模型識別率
                                                                                                                            
-缺點是三維空間中旋轉較大角度的數據識別率較差                                                                                                    
+> 缺點是三維空間中旋轉較大角度的數據識別率較差                                                                                                    
                                                                                                                            
 3、未來解決方案
                                                                                                                            
