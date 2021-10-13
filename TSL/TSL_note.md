@@ -101,8 +101,14 @@ Spatial: nomalization and resize to 224x224
 下圖
 藍色是 attention-based 3D-ResNet50的訓練線
 粉色是 3D-ResNet50 沒有 attentionx
-
-![image](https://user-images.githubusercontent.com/48618187/137124207-1ceccc55-3233-4ef3-9de8-9d36089ddc16.png)
-
+X軸代表 iteration 次數
+<img src="https://user-images.githubusercontent.com/48618187/137124207-1ceccc55-3233-4ef3-9de8-9d36089ddc16.png width="500">
+                                                                                                                           
 # Conclusion
-
+1、 旨在對TSL進行詞彙分類，識別含意
+針對TSL dataset 分辨率不足以及複雜的前處理問題，
+2、將注意力機制，從2D擴展到3D還可以提高模型識別率
+缺點是三維空間中旋轉較大角度的數據識別率較差
+3、未來解決方案
+                                                                                                                           
+- 添加其他手語資料集
