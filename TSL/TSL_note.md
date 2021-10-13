@@ -102,7 +102,7 @@ Spatial: nomalization and resize to 224x224
 藍色是 attention-based 3D-ResNet50的訓練線
 粉色是 3D-ResNet50 沒有 attentionx
 X軸代表 iteration 次數
-<img src="https://user-images.githubusercontent.com/48618187/137124207-1ceccc55-3233-4ef3-9de8-9d36089ddc16.png width="500">
+<img src="https://user-images.githubusercontent.com/48618187/137124207-1ceccc55-3233-4ef3-9de8-9d36089ddc16.png" width="500">
                                                                                                                            
 # Conclusion
 1、 旨在對TSL進行詞彙分類，識別含意
