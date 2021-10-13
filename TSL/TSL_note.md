@@ -32,10 +32,15 @@
 1、Resize to 224x224
 
 2、To simulate skin color
+
 - brightness to range [0.2, 2]
+
 - rotating signer +15/-15 degree randomly
+
 - shift randomly +-0.0105x and +-0.00622y and propotional scale to [0.6, 1.5] times.
+
 - randomly select background set
+
 - normalize data to mean:0.5, standard deviation:0.5
 ### temporal domain
 
@@ -43,8 +48,11 @@
 2、一旦我們決定的幀數超過40幀，我們就放棄其中的一部分，直到選擇到40幀； 如果它們小於 40，我們隨機重複一些幀，使選擇為 40。
 
 - random select : 隨機選擇40幀，並限制其第一幀和最後一幀的距離大於或等於{30, 35, 40, 45, 50}
+
 - center select 
+
 - begin select
+
 - average select
 
 # Archcitecture
@@ -55,12 +63,19 @@ Attention
 
 # Training
 TrainSet: 753 classes to 23k videos
+
 input: `image sequence` of 224 pixels × 224 pixels × 3 channel × 40 frames
+
 Optimizer: `Ranger`
+
 Loss function: `Cross-entropy`
+
 Learning-Rate: `1e-5`
+
 Batch size: 4
+
 Epoch: 100
+
 ## type
 ![image](https://user-images.githubusercontent.com/48618187/137114155-f0856c6f-a38e-441c-9d09-ed0909b0b478.png)
 
@@ -68,8 +83,11 @@ Epoch: 100
 
 
 # Testing
+
 TestSet: 一樣的手語老師，種類較少的手語視訊
+
 Temporal: random select 40 frames
+
 Spatial: nomalization and resize to 224x224
 
 # Experiment
