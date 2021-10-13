@@ -78,7 +78,7 @@ Spatial: nomalization and resize to 224x224
 ## Spatial domain result
 剪下手，貼到不同的背景上，混合一些數據，將手語老師貼到不同的背景，提升效能
 
-<img src="https://user-images.githubusercontent.com/48618187/137114399-27926155-6504-4fe0-aeaf-62617d1ef6c3.png" width="500">
+<img src="https://user-images.githubusercontent.com/48618187/137114399-27926155-6504-4fe0-aeaf-62617d1ef6c3.png" width="700">
 
 ## Temporal domain result
 
@@ -87,5 +87,5 @@ Spatial: nomalization and resize to 224x224
 ## Attention effect
 加入SENet 的 channel attention 
 
-<img src="https://user-images.githubusercontent.com/48618187/137118516-e52b57ac-60d3-4491-bc4a-4aa146858b53.png" width="500">
+<img src="https://user-images.githubusercontent.com/48618187/137118516-e52b57ac-60d3-4491-bc4a-4aa146858b53.png" width="700">
 
